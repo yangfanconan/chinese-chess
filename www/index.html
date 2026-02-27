@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>中国象棋</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="game-header">
+            <h1>中国象棋</h1>
+            <div class="game-info">
+                <span id="current-turn">红方回合</span>
+                <span id="step-count">第 0 步</span>
+            </div>
+        </header>
+
+        <main class="game-container">
+            <div class="board-wrapper">
+                <canvas id="chess-board" width="540" height="600"></canvas>
+            </div>
+
+            <div class="control-panel">
+                <button id="btn-mode" class="control-btn">人人对战</button>
+                <div id="difficulty-panel" class="difficulty-panel" style="display: none;">
+                    <button class="diff-btn control-btn" data-level="1">简单</button>
+                    <button class="diff-btn control-btn active" data-level="2">中等</button>
+                    <button class="diff-btn control-btn" data-level="3">困难</button>
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <button id="btn-undo" class="control-btn">悔棋</button>
+                <button id="btn-save" class="control-btn">保存</button>
+                <button id="btn-load" class="control-btn">加载</button>
+                <button id="btn-restart" class="control-btn">重开</button>
+                <button id="btn-sound" class="control-btn active">音效: 开</button>
+            </div>
+        </main>
+
+        <div id="modal-overlay" class="modal-overlay hidden">
+            <div class="modal-content">
+                <h2 id="modal-title">游戏结束</h2>
+                <p id="modal-message"></p>
+                <button id="modal-confirm" class="control-btn">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/chessRules.js"></script>
+    <script src="js/chessAI.js"></script>
+    <script src="js/chessUI.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

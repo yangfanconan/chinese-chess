@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Cordova
+platforms/
+plugins/
+
+# Build outputs
+*.apk
+*.aab
+
+# IDE
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Temp
+tmp/
+temp/

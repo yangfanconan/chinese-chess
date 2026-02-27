@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.chinesechess.game" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>中国象棋</name>
+    <description>一款具有中国风特色的象棋游戏</description>
+    <author email="dev@example.com" href="">Developer</author>
+    
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="Fullscreen" value="false" />
+    <preference name="BackgroundColor" value="0xfff5f0e6" />
+    <preference name="SplashScreen" value="none" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="0" />
+    
+    <platform name="android">
+        <preference name="AndroidMinSdkVersion" value="22" />
+        <preference name="AndroidTargetSdkVersion" value="33" />
+        <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+        
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" xmlns:android="http://schemas.android.com/apk/res/android" />
+        </edit-config>
+    </platform>
+    
+    <plugin name="cordova-plugin-whitelist" spec="1.3.5" />
+</widget>

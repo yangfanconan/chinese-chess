@@ -1,0 +1,19 @@
+{
+  "appId": "com.chinesechess.game",
+  "appName": "中国象棋",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": true
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0,
+      "backgroundColor": "#f5f0e6",
+      "showSpinner": false
+    }
+  }
+}
