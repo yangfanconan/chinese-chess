@@ -1,173 +1,182 @@
-# 中国象棋 - 跨平台游戏
+<div align="center">
 
-一款基于 HTML5 + JavaScript + CSS 开发的跨平台中国象棋游戏，支持浏览器运行和安卓打包。
+# 中国象棋 | Chinese Chess
 
-## 项目结构
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+<img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android"/>
 
+**A Cross-Platform Chinese Chess Game | 跨平台中国象棋游戏**
+
+[English](#english) | [中文](#中文)
+
+</div>
+
+---
+
+<a name="english"></a>
+## 🎮 English
+
+### Overview
+
+A fully-featured Chinese Chess (Xiangqi) game built with pure HTML5, JavaScript, and CSS3. Features a traditional Chinese aesthetic with modern responsive design. Runs seamlessly in browsers and can be packaged as an Android APK using Cordova.
+
+### ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| 🏯 **Complete Rules** | Full implementation of official Chinese Chess rules including check, checkmate, and special moves |
+| 🤖 **AI Opponent** | Alpha-Beta pruning algorithm with 3 difficulty levels |
+| 👥 **Local Multiplayer** | Two-player mode on the same device |
+| 📱 **Responsive Design** | Adaptive UI for all screen sizes - phones, tablets, and desktops |
+| 💾 **Save/Load** | Preserve your game progress locally |
+| ↩️ **Undo** | Take back your last 10 moves |
+| 🎨 **Chinese Style** | Traditional wooden board texture with calligraphy-style pieces |
+
+### 📸 Screenshots
+
+<div align="center">
+  <img src="docs/screenshots/gameplay.png" width="300" alt="Gameplay"/>
+  <img src="docs/screenshots/menu.png" width="300" alt="Menu"/>
+</div>
+
+### 🚀 Quick Start
+
+#### Web Browser
+```bash
+# Clone the repository
+git clone https://github.com/yangfanconan/chinese-chess.git
+
+# Open index.html in your browser
+# Or use a local server:
+npx http-server -p 8080
 ```
-chinese-chess/
-├── index.html              # 主页面
-├── css/
-│   └── style.css          # 样式文件
-├── js/
-│   ├── chessRules.js      # 象棋规则核心
-│   ├── chessUI.js         # 界面渲染
-│   ├── storage.js         # 数据存储
-│   └── main.js            # 主程序
-├── res/
-│   ├── audio/             # 音效资源（需自行添加）
-│   └── images/            # 图片资源
-├── package.json           # npm 配置
-├── config.xml             # Cordova 配置
-└── capacitor.config.json  # Capacitor 配置（备选）
+
+#### Android
+Download the APK from [Releases](https://github.com/yangfanconan/chinese-chess/releases) and install on your Android device.
+
+### 🛠️ Build from Source
+
+```bash
+# Install dependencies
+npm install
+
+# Build Android APK
+npm run build:cordova
 ```
 
-## 网页端运行
+### 📋 Requirements
 
-### 方法一：直接打开
-直接在浏览器中打开 `index.html` 文件即可运行。
+- **Web**: Modern browser (Chrome, Firefox, Safari, Edge)
+- **Android**: Android 5.0+ (API 22+)
 
-### 方法二：使用本地服务器
+---
+
+<a name="中文"></a>
+## 🎮 中文
+
+### 项目简介
+
+一款基于 HTML5 + JavaScript + CSS3 开发的中国象棋游戏，采用传统中国风界面设计，支持现代响应式布局。既可直接在浏览器运行，也可通过 Cordova 打包为安卓 APK。
+
+### ✨ 功能特性
+
+| 功能 | 说明 |
+|------|------|
+| 🏯 **完整规则** | 严格遵循中国象棋国标规则，包括将军、将死、蹩马腿、塞象眼等 |
+| 🤖 **人机对战** | 采用 Alpha-Beta 剪枝算法，支持简单/中等/困难三档难度 |
+| 👥 **双人对战** | 本地同屏对战模式 |
+| 📱 **响应式布局** | 自适应各种屏幕尺寸，完美适配手机、平板、桌面端 |
+| 💾 **棋局保存** | 本地存储当前棋局，随时恢复对局 |
+| ↩️ **悔棋功能** | 支持悔棋，最多回退10步 |
+| 🎨 **中国风界面** | 仿木纹棋盘、书法字体棋子，传统与现代的完美融合 |
+
+### 📸 游戏截图
+
+<div align="center">
+  <img src="docs/screenshots/gameplay.png" width="300" alt="游戏界面"/>
+  <img src="docs/screenshots/menu.png" width="300" alt="菜单界面"/>
+</div>
+
+### 🚀 快速开始
+
+#### 网页版
+```bash
+# 克隆仓库
+git clone https://github.com/yangfanconan/chinese-chess.git
+
+# 直接打开 index.html 或使用本地服务器
+npx http-server -p 8080
+```
+
+#### 安卓版
+从 [Releases](https://github.com/yangfanconan/chinese-chess/releases) 下载 APK 并安装。
+
+### 🛠️ 编译打包
+
 ```bash
 # 安装依赖
 npm install
 
-# 启动本地服务器
-npm run serve
-
-# 访问 http://localhost:8080
-```
-
-## 安卓打包
-
-### 使用 Cordova
-
-1. 安装 Cordova CLI：
-```bash
-npm install -g cordova
-```
-
-2. 添加安卓平台：
-```bash
-cordova platform add android
-```
-
-3. 构建安卓应用：
-```bash
-# 调试版本
+# 构建 Android APK
 npm run build:cordova
-
-# 发布版本
-npm run build:cordova:release
 ```
 
-4. 生成的 APK 位于：
-```
-platforms/android/app/build/outputs/apk/
-```
+### 📋 系统要求
 
-### 使用 Capacitor（备选方案）
+- **网页版**：Chrome / Firefox / Safari / Edge 等现代浏览器
+- **安卓版**：Android 5.0+ (API 22+)
 
-1. 安装 Capacitor：
-```bash
-npm install @capacitor/core @capacitor/cli @capacitor/android
+---
+
+## 📁 Project Structure | 项目结构
+
 ```
-
-2. 初始化 Capacitor：
-```bash
-npx cap init
-```
-
-3. 添加安卓平台：
-```bash
-npx cap add android
-```
-
-4. 同步并打开 Android Studio：
-```bash
-npx cap sync
-npx cap open android
+chinese-chess/
+├── index.html              # Main page | 主页面
+├── css/
+│   └── style.css          # Styles | 样式文件
+├── js/
+│   ├── chessRules.js      # Game rules | 象棋规则核心
+│   ├── chessUI.js         # UI rendering | 界面渲染
+│   ├── chessAI.js         # AI engine | AI 引擎
+│   ├── storage.js         # Data storage | 数据存储
+│   └── main.js            # Main program | 主程序
+├── www/                    # Cordova web assets | Cordova 资源
+├── config.xml             # Cordova config | Cordova 配置
+└── package.json           # npm config | npm 配置
 ```
 
-## 功能特性
+## 🔧 Tech Stack | 技术栈
 
-### 基础功能
-- 完整的中国象棋规则实现
-- 双人本地对战
-- 走子高亮提示
-- 将军/将死判定
-- 悔棋功能（最多10步）
-- 棋局保存/加载
+- **Frontend**: HTML5 Canvas, ES6+ JavaScript, CSS3
+- **AI Algorithm**: Alpha-Beta Pruning with position evaluation
+- **Cross-Platform**: Apache Cordova
+- **Storage**: localStorage / Cordova Storage
 
-### 视觉效果
-- 中国风界面设计
-- 棋盘仿木纹效果
-- 棋子书法字体
-- 走子动画效果
+## 🗺️ Roadmap | 后续规划
 
-### 音效系统
-- 走子音效
-- 吃子音效
-- 将军音效
-- 胜利音效
-- 音效开关
+- [ ] Online multiplayer | 在线联机对战
+- [ ] Puzzle mode | 残局挑战模式
+- [ ] Game replay | 棋谱回放
+- [ ] Tutorial mode | 新手教程
+- [ ] Internationalization (i18n) | 多语言支持
 
-## 音效资源说明
+## 📄 License | 许可证
 
-项目预留了音效接口，如需添加音效，请在 `res/audio/` 目录下放置以下文件：
-- `move.mp3` - 走子音效
-- `capture.mp3` - 吃子音效
-- `check.mp3` - 将军音效
-- `victory.mp3` - 胜利音效
+[MIT License](LICENSE)
 
-推荐音效来源：
-- [Freesound](https://freesound.org/) - 免费音效库
-- [爱给网](https://www.aigei.com/) - 中文音效资源
+## 🤝 Contributing | 贡献
 
-## 扩展功能建议
+Contributions are welcome! Feel free to submit issues and pull requests.
 
-### 1. 人机对战
-实现思路：
-- 使用 Alpha-Beta 剪枝算法
-- 添加棋子价值评估函数
-- 实现不同难度的 AI 等级
+欢迎提交 Issue 和 Pull Request！
 
-### 2. 在线联机
-实现思路：
-- 使用 WebSocket 实现实时通信
-- 搭建房间匹配系统
-- 添加排行榜功能
+---
 
-### 3. 棋谱回放
-实现思路：
-- 记录完整棋谱数据
-- 实现前进/后退功能
-- 支持棋谱导入/导出
+<div align="center">
 
-### 4. 更多功能
-- 残局挑战模式
-- 学习模式（规则教学）
-- 成就系统
-- 多语言支持
+**Made with ❤️ by [Yang Fan](https://github.com/yangfanconan)**
 
-## 技术说明
-
-### 规则实现
-- 严格遵循中国象棋国标规则
-- 支持所有棋子的合法走法判断
-- 实现蹩马腿、塞象眼等特殊规则
-- 支持将帅照面（飞将）判定
-
-### 性能优化
-- 使用 Canvas 绘制，减少 DOM 操作
-- 数据驱动的位置计算
-- 事件委托处理用户交互
-
-### 兼容性
-- 支持主流浏览器（Chrome/Firefox/Safari）
-- 支持触摸屏操作
-- 自适应不同屏幕尺寸
-
-## 许可证
-
-MIT License
+</div>
